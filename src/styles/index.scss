@@ -4,3 +4,12 @@ body {
   color: $body-color;
   font-family: sans-serif;
 }
+
+div {
+  margin-bottom: 50px;
+}
+
+#final-result {
+  border: 1px solid red;
+  padding: 4px;
+}
