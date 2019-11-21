@@ -8,20 +8,23 @@ console.log('webpack starterkit');
 
 // Function are First Class Citizens
 
+// callback
 const foo = cb => {
   console.log('I am inside foo');
   cb();
-}
+};
 
 const bar = function () {
   console.log('Surprise!');
-}
-
-const fullname = (f, l = 'Sharma') => `${f} ${l}`;
-
-const square = x => x * x;
+};
 
 foo(bar);
 
+// Default parameter
+const fullname = (f, l = 'Sharma') => `${f} ${l}`;
 console.log(fullname('Ramesh', 'Rocks'));
-console.log(square(2))
+
+// Arrow Function automatically returns a value
+const square = x => x * x;
+
+console.log(square(2));
