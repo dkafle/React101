@@ -1,35 +1,33 @@
 import '../styles/index.scss';
 
-const Counter = function() {
-  let count = 0;
-
-  this.increment = function () {
-    count += 1;
-    return count;
-  };
-
-  this.decrement = function () {
-    count -= 1;
-    return count;
-  };
-
-  this.getCount = function () {
-    return count;
-  };
+const Point = function(x, y) {
+  this.x = x;
+  this.y = y;
 };
 
-const myCounter = new Counter();
-myCounter.increment();
-myCounter.increment();
-console.log(myCounter.getCount());
-
-const Calculator = function () {
-  let result = 0;
-
-  this.add = function(newValue) {
-    return result += newValue;
-  };
+const Line = function(start, end) {
+  this.start = start;
+  this.end = end;
 };
 
-const myCalculator = new Calculator();
-myCalculator.add();
+Point.prototype.showPosition = function () {
+  return 'My position is: (' + this.x + ', ' + this.y + ')';
+};
+
+Line.prototype.drawLine = function() {
+  console.log('im drawing line with ', this.start, this.end);
+};
+
+const p = new Point(10,50);
+const q = new Point(150, 300);
+
+const longLine = new Line(q, p);
+longLine.drawLine();
+
+console.log(longLine.hasOwnProperty('start'));
+console.log(longLine.hasOwnProperty('end'));
+console.log(longLine.hasOwnProperty('drawLine'));
+
+console.log(p.hasOwnProperty('x'));
+console.log(p.hasOwnProperty('y'));
+console.log(p.hasOwnProperty('showPosition'));
