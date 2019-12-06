@@ -1,18 +1,10 @@
 import '../styles/index.scss';
+// import counter, { PI, sum } from './counter';
+import * as foo from '../modules/counter';
+import weekDays from '../modules/lib';
 
-let y = 10;
-// console.log(z);
-
-var weekDays = function () {
-  var x = 5;
-  // z = 10;
-  return {
-    myAge: x,
-    y: 'hello',
-  };
-}();
-
-console.log(
-  weekDays.myAge,
-  weekDays.y
-);
+// let myCount = counter.increase();
+// console.log(myCount);
+console.log(foo.PI);
+console.log(foo.sum(100, 500));
+console.log(weekDays.getDayInitial(0));
